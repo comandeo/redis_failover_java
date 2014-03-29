@@ -102,7 +102,7 @@ public class RedisFailoverMonitor implements Watcher, Runnable {
             try {
                 stat = zk.exists(RF_NODE, true);
             } catch (KeeperException e) {
-                Thread.currentThread().interrupt();
+                log.error(e);
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
             }
