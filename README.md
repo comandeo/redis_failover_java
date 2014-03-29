@@ -10,7 +10,7 @@ and send all commands to the master. If the master is down for a while, it will 
 A short example is provided below:
 
 ```java
-RedisClientsManager manager = new RedisClientsManager();
+RedisClientsManager manager = new RedisClientsManager("some.zookeeper.com:2181");
 RedisClient client = manager.getClient();
 client.set("myKey", "myValue");
 client.expire("myKey", 5);
